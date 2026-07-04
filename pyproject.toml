@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "audit-ledger"
 version = "0.1.0"
@@ -11,6 +15,12 @@ dependencies = []
 
 [project.optional-dependencies]
 dev = ["jsonschema>=4.0", "pytest>=8.0", "ruff>=0.6", "mypy>=1.11"]
+
+# `contracts/` holds data only (audit_entry schema + version), not importable
+# code, so the flat layout exposes exactly one Python package. Declare it
+# explicitly — otherwise setuptools refuses ("multiple top-level packages").
+[tool.setuptools]
+packages = ["audit_ledger"]
 
 [tool.ruff]
 line-length = 100
