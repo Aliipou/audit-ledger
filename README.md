@@ -1,5 +1,7 @@
 # audit-ledger — write-only, tamper-evident traceability
 
+**Live (graph):** [https://ali-audit-ledger.vercel.app](https://ali-audit-ledger.vercel.app)
+
 The accountability layer of the Decision OS. It receives records; it holds **no
 authority** (it never emits a Decision). Every kernel decision and executed
 effect is appended here, hash-chained, and its head is anchored out-of-process so
